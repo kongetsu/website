@@ -13,7 +13,7 @@ div.egg {
     height: 90px;
 }
 
-#heart:before, ??? #heart:after 
+#heart:before, #heart:after 
 {
         position: absolute;
         content: "";
