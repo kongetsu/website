@@ -1,0 +1,31 @@
+<html>
+<head>
+<style>
+@keyframes photoshow
+{
+	0%{background-image:url(image/1.jpg);opacity:0}
+	10%{background-image:url(image/2.jpg);opacity:0.1}
+	20%{background-image:url(image/3.jpg);opacity:0.2}
+	30%{background-image:url(image/4.jpg);opacity:0.3}
+	40%{background-image:url(image/5.jpg);opacity:0.4}
+	50%{background-image:url(image/6.jpg);opacity:0.5}
+	60%{background-image:url(image/7.jpg);opacity:0.6}
+	70%{background-image:url(image/8.jpg);opacity:0.7}
+	80%{background-image:url(image/9.jpg);opacity:0.8}
+	100%{background-image:url(image/10.jpg);opacity:0.9}
+}
+@keyframes movep
+{
+	0%{backgrond-position:0% 0%}
+	100%{backgrond-position:-300% 0%}
+}
+#img1{width:400px;height:300px;
+animation:photoshow 20s infinite;
+background-repeat:no-repeat}
+#img2{width:400px;height:300px;
+animation:movep 20s 1;
+background-image:url(image/1.jpg);
+background-repeat:no-repeat}
+</style>
+</head>
+<body><div id=img1></div>
