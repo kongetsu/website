@@ -138,3 +138,579 @@ p{line-height:23.0px;}</style></head><body style="background-color:#ffffee;margi
 &nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
 <nobr>}</nobr><br>
 </p></td></tr></table>
+
+<br>
+<br>
+<br>
+<table align=left><tr><td  align=right style=color:teal valign=top><p>1<br>
+2<br>
+3<br>
+4<br>
+5<br>
+6<br>
+7<br>
+8<br>
+9<br>
+10<br>
+11<br>
+12<br>
+13<br>
+14<br>
+15<br>
+16<br>
+17<br>
+18<br>
+19<br>
+20<br>
+21<br>
+22<br>
+23<br>
+24<br>
+25<br>
+26<br>
+27<br>
+28<br>
+29<br>
+30<br>
+31<br>
+32<br>
+33<br>
+34<br>
+35<br>
+36<br>
+37<br>
+38<br>
+39<br>
+40<br>
+41<br>
+42<br>
+43<br>
+44<br>
+45<br>
+46<br>
+47<br>
+48<br>
+49<br>
+50<br>
+51<br>
+52<br>
+53<br>
+54<br>
+55<br>
+56<br>
+57<br>
+58<br>
+59<br>
+60<br>
+61<br>
+62<br>
+63<br>
+64<br>
+65<br>
+66<br>
+67<br>
+68<br>
+69<br>
+70<br>
+71<br>
+72<br>
+73<br>
+74<br>
+75<br>
+76<br>
+77<br>
+78<br>
+79<br>
+80<br>
+81<br>
+82<br>
+83<br>
+84<br>
+85<br>
+86<br>
+87<br>
+88<br>
+89<br>
+90<br>
+91<br>
+92<br>
+93<br>
+94<br>
+95<br>
+96<br>
+97<br>
+98<br>
+99<br>
+100<br>
+101<br>
+102<br>
+103<br>
+104<br>
+105<br>
+106<br>
+107<br>
+108<br>
+109<br>
+110<br>
+111<br>
+112<br>
+113<br>
+114<br>
+115<br>
+116<br>
+117<br>
+118<br>
+119<br>
+120<br>
+121<br>
+122<br>
+123<br>
+124<br>
+125<br>
+126<br>
+127<br>
+128<br>
+129<br>
+130<br>
+131<br>
+132<br>
+133<br>
+134<br>
+135<br>
+137<br>
+138<br>
+139<br>
+140<br>
+141<br>
+142<br>
+143<br>
+144<br>
+145<br>
+146<br>
+147<br>
+148<br>
+149<br>
+151<br>
+152<br>
+153<br>
+154<br>
+155<br>
+156<br>
+157<br>
+158<br>
+159<br>
+160<br>
+161<br>
+162<br>
+163<br>
+164<br>
+165<br>
+166<br>
+167<br>
+168<br>
+169<br>
+170<br>
+171<br>
+172<br>
+173<br>
+174<br>
+175<br>
+176<br>
+177<br>
+178<br>
+179<br>
+180<br>
+182<br>
+183<br>
+184<br>
+185<br>
+186<br>
+187<br>
+188<br>
+189<br>
+190<br>
+191<br>
+192<br>
+193<br>
+195<br>
+196<br>
+197<br>
+199<br>
+200<br>
+201<br>
+202<br>
+204<br>
+205<br>
+206<br>
+207<br>
+208<br>
+209<br>
+210<br>
+211<br>
+</p></td><td  align=left valign=top><p><nobr><b>public</b> <b>class</b> FlagStarCoordinates</nobr><br>
+<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><font color=green>/**</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;计算五星红旗上星星顶点坐标的方法</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>&nbsp;&nbsp;&nbsp;&nbsp;*</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;largeone&nbsp;是否为大星，true表示大星，false表示小星</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;starOrder&nbsp;小星的顺序（1&nbsp;-&nbsp;4），如果是大星则此参数无实际意义</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;一个10&nbsp;x&nbsp;2的二维数组，代表10个顶点（5个外顶点和5个内顶点）的坐标，第一维表示顶点序号，第二维0表示x坐标，1表示y坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>&nbsp;&nbsp;&nbsp;&nbsp;*/</font></nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>public</b> <b>static</b> int[][] starCordinate(boolean largeone, <b>int</b> starOrder)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>int</b> width = 1152;  <font color=green>//&nbsp;设定旗宽像素</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font><b>int</b> height = width * 2 / 3;  <font color=green>//&nbsp;根据长宽比3:2计算旗高像素</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;大星外接圆直径（基于旗高）</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font><b>int</b> largeDiameter = height * 3 / 10;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;小星外接圆直径（基于旗高）</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font><b>int</b> smallDiameter = height * 1 / 10;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;大星圆心坐标（基于旗面的相对位置计算）</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font><b>int</b> largeCenterX = width * 5 / 10;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>int</b> largeCenterY = height * 5 / 10;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;小星圆心坐标数组（4颗小星的圆心坐标）</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>int[][] smallCenters =</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>width * 10 / 10, height * 2 / 10</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>,</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>width * 12 / 10, height * 4 / 10</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>,</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>width * 12 / 10, height * 7 / 10</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>,</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>width * 10 / 10, height * 9 / 10</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>};</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>int[][] coordinates = <b>new</b> int[10][2];</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>if</b> (largeone)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;计算大星的顶点坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font><b>int</b> radius = largeDiameter / 2;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> angleStep = 2 * Math.PI / 5;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>for</b> (int i = 0; i &lt; 5; i++)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> angle = i * angleStep;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;外顶点x坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>coordinates[i][0] = (int) (largeCenterX + radius * Math.cos(angle));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;外顶点y坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>coordinates[i][1] = (int) (largeCenterY - radius * Math.sin(angle));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> innerAngle = angle + angleStep / 2;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;内顶点x坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>coordinates[i + 5][0] = (int) (largeCenterX + radius / 2 * Math.cos(innerAngle));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;内顶点y坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>coordinates[i + 5][1] = (int) (largeCenterY - radius / 2 * Math.sin(innerAngle));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>else</b></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>if</b> (starOrder &gt;= 1 && starOrder &lt;= 4)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;计算对应序号小星的顶点坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font><b>int</b> radius = smallDiameter / 2;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>int</b> centerX = smallCenters[starOrder - 1][0];</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>int</b> centerY = smallCenters[starOrder - 1][1];</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> angleStep = 2 * Math.PI / 5;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>for</b> (int i = 0; i &lt; 5; i++)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> angle = i * angleStep;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;外顶点x坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>coordinates[i][0] = (int) (centerX + radius * Math.cos(angle));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;外顶点y坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>coordinates[i][1] = (int) (centerY - radius * Math.sin(angle));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> innerAngle = angle + angleStep / 2;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;内顶点x坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>coordinates[i + 5][0] = (int) (centerX + radius / 2 * Math.cos(innerAngle));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;内顶点y坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>coordinates[i + 5][1] = (int) (centerY - radius / 2 * Math.sin(innerAngle));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>return</b> coordinates;</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+<nobr>}</nobr><br>
+<nobr>你可以使用以下方式调用这个方法进行测试：</nobr><br>
+<nobr>java</nobr><br>
+<nobr>复制</nobr><br>
+<nobr><b>public</b> <b>class</b> Main</nobr><br>
+<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>public</b> <b>static</b> <b>void</b> main(String[] args)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;获取大星坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>int[][] largeStarCoordinates = FlagStarCoordinates.starCordinate(true, 0);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>printCoordinates(largeStarCoordinates);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;获取第一颗小星坐标</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>int[][] smallStar1Coordinates = FlagStarCoordinates.starCordinate(false, 1);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>printCoordinates(smallStar1Coordinates);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;依次可以获取其他小星坐标进行测试</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font></nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>private</b> <b>static</b> <b>void</b> printCoordinates(int[][] coordinates)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>for</b> (int i = 0; i &lt; coordinates.length; i++)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>System.out.println(<font color=red>"顶点&nbsp;"</font>+ i + <font color=red>"&nbsp;坐标:&nbsp;("</font>+ coordinates[i][0] + <font color=red>",&nbsp;"</font>+ coordinates[i][1] + <font color=red>")"</font>);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+<nobr>}</nobr><br>
+<nobr><b>void</b> paintStar(int [][] vertaxCoordinates, Graphics g)</nobr><br>
+<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>int</b> [] x = <b>new</b> int[vertaxCoordinates.length];</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>int</b> [] y = <b>new</b> int[vertaxCoordinates.length];</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>for</b> (int i=0; i &lt;  vertaxCoordinates.length; i++)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>x[i] = vertaxCoordinates[i][0];</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>y[i] = vertaxCoordinates[i][1];</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>g.paintPolygon(x,y);</nobr><br>
+<nobr>}</nobr><br>
+<nobr><b>import</b> javax.swing.*;</nobr><br>
+<nobr><b>import</b> java.awt.geom.*;</nobr><br>
+<nobr><b>import</b> java.awt.*;</nobr><br>
+<nobr></nobr><br>
+<nobr><b>public</b> <b>class</b> FiveStarFlag <b>extends</b> JPanel</nobr><br>
+<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>public</b> <b>static</b> <b>void</b> main(String[] args)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>JFrame jFrame = <b>new</b> JFrame(<font color=red>"五星红旗"</font>);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>jFrame.getContentPane().add(new FiveStarFlag(600));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>jFrame.pack();</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>jFrame.setLocationRelativeTo(null);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>jFrame.setVisible(true);</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>public</b> <b>static</b> Shape createPentacle(double sx, <b>double</b> sy, <b>double</b> radius, <b>double</b> theta)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>final</b> <b>double</b> arc = Math.PI / 5;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>final</b> <b>double</b> rad = Math.sin(Math.PI / 10) / Math.sin(3 * Math.PI / 10);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>GeneralPath path = <b>new</b> GeneralPath();</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>path.moveTo(1, 0);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>for</b> (int i = 0; i &lt; 5; i++)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>path.lineTo(rad * Math.cos((1 + 2 * i) * arc), rad * Math.sin((1 + 2 * i) * arc));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>path.lineTo(Math.cos(2 * (i + 1) * arc), Math.sin(2 * (i + 1) * arc));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>path.closePath();</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>AffineTransform atf = AffineTransform.getScaleInstance(radius, radius);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>atf.translate(sx / radius, sy / radius);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>atf.rotate(theta);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>return</b> atf.createTransformedShape(path);</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>private</b> <b>int</b> width, height;</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>private</b> <b>double</b> maxR = 0.15, minR = 0.05;</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>private</b> <b>double</b> maxX = 0.25, maxY = 0.25;</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>private</b> double[] minX =</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>0.50, 0.60, 0.60, 0.50</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>};</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>private</b> double[] minY =</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>0.10, 0.20, 0.35, 0.45</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>};</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>public</b> FiveStarFlag(int width)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>this.width = width / 3 * 3;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>this.height = width / 3 * 2;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>setPreferredSize(new Dimension(this.width, this.height));</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>@Override</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>protected</b> <b>void</b> paintComponent(Graphics g)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>Graphics2D graphics2D = (Graphics2D) g;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>graphics2D.setPaint(Color.RED);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>graphics2D.fillRect(0, 0, width, height);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> ox = height * maxX, oy = height * maxY;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>graphics2D.setPaint(Color.YELLOW);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>graphics2D.fill(createPentacle(ox, oy, height * maxR, -Math.PI / 2));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>for</b> (int i = 0; i &lt; 4; i++)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> sx = minX[i] * height, sy = minY[i] * height;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> theta = Math.atan2(oy - sy, ox - sx);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>graphics2D.fill(createPentacle(sx, sy, height * minR, theta));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+<nobr>}</nobr><br>
+</p></td></tr></table>
+<br>
+<br>
+<br>
+<table align=left><tr><td  align=right style=color:teal valign=top><p>1<br>
+2<br>
+3<br>
+4<br>
+5<br>
+6<br>
+7<br>
+8<br>
+9<br>
+10<br>
+11<br>
+12<br>
+13<br>
+14<br>
+15<br>
+16<br>
+17<br>
+18<br>
+19<br>
+20<br>
+21<br>
+22<br>
+23<br>
+24<br>
+25<br>
+26<br>
+27<br>
+28<br>
+29<br>
+30<br>
+31<br>
+32<br>
+33<br>
+34<br>
+35<br>
+36<br>
+37<br>
+38<br>
+39<br>
+40<br>
+41<br>
+42<br>
+43<br>
+44<br>
+45<br>
+</p></td><td  align=left valign=top><p><nobr><b>import</b> java.util.Scanner;</nobr><br>
+<nobr></nobr><br>
+<nobr><b>public</b> <b>class</b> SumNumbers</nobr><br>
+<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>public</b> <b>static</b> <b>void</b> main(String[] args)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>Scanner scanner = <b>new</b> Scanner(System.in);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;Prompt&nbsp;the&nbsp;user&nbsp;to&nbsp;enter&nbsp;numbers</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>System.out.println(<font color=red>"Enter&nbsp;two&nbsp;or&nbsp;more&nbsp;numbers&nbsp;separated&nbsp;by&nbsp;spaces:"</font>);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;Read&nbsp;the&nbsp;entire&nbsp;line&nbsp;of&nbsp;input</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>String inputLine = scanner.nextLine();</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;Split&nbsp;the&nbsp;input&nbsp;by&nbsp;spaces&nbsp;into&nbsp;an&nbsp;array&nbsp;of&nbsp;strings</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>String[] inputs = inputLine.split(<font color=red>"&nbsp;"</font>);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> sum = 0;  <font color=green>//&nbsp;Variable&nbsp;to&nbsp;store&nbsp;the&nbsp;sum&nbsp;of&nbsp;numbers</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;Iterate&nbsp;over&nbsp;each&nbsp;input&nbsp;and&nbsp;try&nbsp;to&nbsp;parse&nbsp;it&nbsp;as&nbsp;a&nbsp;number</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font><b>for</b> (String input : inputs)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>try</b></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;Try&nbsp;to&nbsp;convert&nbsp;the&nbsp;input&nbsp;string&nbsp;to&nbsp;a&nbsp;number&nbsp;(double)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font><b>double</b> number = Double.parseDouble(input);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>sum += number;  <font color=green>//&nbsp;Add&nbsp;the&nbsp;valid&nbsp;number&nbsp;to&nbsp;the&nbsp;sum</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>catch</b> (NumberFormatException e)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;If&nbsp;parsing&nbsp;fails,&nbsp;print&nbsp;"NaN"&nbsp;and&nbsp;exit&nbsp;the&nbsp;program</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>System.out.println(<font color=red>"NaN"</font>);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>scanner.close();  <font color=green>//&nbsp;Close&nbsp;the&nbsp;scanner&nbsp;before&nbsp;exiting</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>return;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><font color=green>//&nbsp;If&nbsp;all&nbsp;inputs&nbsp;were&nbsp;valid&nbsp;numbers,&nbsp;print&nbsp;the&nbsp;sum</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font>System.out.println(<font color=red>"The&nbsp;sum&nbsp;is:&nbsp;"</font>+ sum);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>scanner.close();  <font color=green>//&nbsp;Close&nbsp;the&nbsp;scanner&nbsp;at&nbsp;the&nbsp;end</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></font></nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+<nobr>}</nobr><br>
+</p></td></tr></table>
+<br>
+<br>
+<br>
+<table align=left><tr><td  align=right style=color:teal valign=top><p>1<br>
+2<br>
+3<br>
+4<br>
+5<br>
+6<br>
+7<br>
+8<br>
+9<br>
+10<br>
+11<br>
+12<br>
+13<br>
+14<br>
+15<br>
+16<br>
+17<br>
+18<br>
+19<br>
+20<br>
+21<br>
+22<br>
+23<br>
+24<br>
+25<br>
+26<br>
+27<br>
+28<br>
+29<br>
+30<br>
+</p></td><td  align=left valign=top><p><nobr><b>import</b> java.util.*;</nobr><br>
+<nobr><b>public</b> <b>class</b> Sum</nobr><br>
+<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>public</b> <b>static</b> <b>void</b> main(String [] args)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> sum = 0.0;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>Scanner s = <b>new</b> Scanner(System.in);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>s.useDelimiter(<font color=red>"&nbsp;"</font>);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>while</b> (true)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>try</b></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>String name = s.next();</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>s.useDelimiter(<font color=red>"\n"</font>);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>String ds = s.next().trim();</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>if</b> (!ds.equals(<font color=red>"Amount"</font>))</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> d = Double.parseDouble(ds);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>sum = sum + d;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>s.useDelimiter(<font color=red>"&nbsp;"</font>);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>catch(Exception e)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>break;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>System.out.println(<font color=red>"sum="</font>+ sum);</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+<nobr>}</nobr><br>
+</p></td></tr></table>
+<br>
+<br>
+<br>
