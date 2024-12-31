@@ -1,0 +1,140 @@
+
+<!-- saved from url=(0036)http://10.26.40.46/tealeaman/Listing -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">td{font-family:courier;font-size:18px}
+p{line-height:23.0px;}</style></head><body style="background-color:#ffffee;margin:5px 5px 0px 5px"><table align="left"><tbody><tr><td align="right" style="color:teal" valign="top"><p>1<br>
+2<br>
+3<br>
+4<br>
+5<br>
+6<br>
+7<br>
+8<br>
+9<br>
+10<br>
+11<br>
+12<br>
+13<br>
+14<br>
+15<br>
+16<br>
+</p></td><td align="left" valign="top"><p><nobr><b>import</b> java.util.*;</nobr><br>
+<nobr><b>public</b> <b>class</b> Calc</nobr><br>
+<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>public</b> <b>static</b> <b>void</b> main(String [] args)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>int</b> n1, n2, sum, product;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>Scanner scanner = <b>new</b> Scanner(System.in);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>System.out.println(<font color="red">"Enter&nbsp;an&nbsp;integer:"</font>);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>n1 = scanner.nextInt();</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>System.out.println(<font color="red">"Enter&nbsp;another&nbsp;integer:"</font>);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>n2 = scanner.nextInt();</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>sum = n1 + n2;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>product = n1 * n2;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>System.out.println(<font color="red">"The&nbsp;sum&nbsp;is&nbsp;"</font>+ sum+ <font color="red">",&nbsp;and&nbsp;the&nbsp;product&nbsp;is&nbsp;"</font>+ product);</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+<nobr>}</nobr><br>
+</p></td></tr></tbody></table>
+
+<br>
+<br>
+<br>
+
+<table align=left style="display:block"><tr><td  align=right style=color:teal valign=top><p>1<br>
+2<br>
+3<br>
+4<br>
+5<br>
+6<br>
+7<br>
+8<br>
+9<br>
+10<br>
+11<br>
+12<br>
+13<br>
+14<br>
+15<br>
+16<br>
+17<br>
+18<br>
+19<br>
+20<br>
+21<br>
+22<br>
+23<br>
+24<br>
+25<br>
+26<br>
+27<br>
+28<br>
+29<br>
+30<br>
+31<br>
+32<br>
+33<br>
+34<br>
+35<br>
+36<br>
+37<br>
+38<br>
+39<br>
+40<br>
+41<br>
+42<br>
+43<br>
+44<br>
+45<br>
+46<br>
+47<br>
+48<br>
+49<br>
+</p></td><td  align=left valign=top><p><nobr><b>import</b> javax.swing.JFrame;</nobr><br>
+<nobr><b>import</b> java.awt.Canvas;</nobr><br>
+<nobr><b>import</b> java.awt.Color;</nobr><br>
+<nobr><b>import</b> java.awt.Graphics;</nobr><br>
+<nobr><b>import</b> java.awt.Dimension;</nobr><br>
+<nobr></nobr><br>
+<nobr><b>public</b> <b>class</b> AccurateStarDrawing <b>extends</b> Canvas</nobr><br>
+<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>public</b> <b>void</b> paint(Graphics g)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>g.setColor(Color.YELLOW);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>int</b> centerX = 100;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>int</b> centerY = 100;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>int</b> outerRadius = 50;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>int</b> innerRadius = outerRadius / 2;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> angleIncrement = 2 * Math.PI / 5;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>int[] xPoints = <b>new</b> int[10];</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>int[] yPoints = <b>new</b> int[10];</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>for</b> (int i = 0; i &lt; 5; i++)</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr><b>double</b> angle = i * 2 * angleIncrement;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>xPoints[2 * i] = (int) (centerX + outerRadius * Math.cos(angle));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>yPoints[2 * i] = (int) (centerY + outerRadius * Math.sin(angle));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>angle += angleIncrement;</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>xPoints[2 * i + 1] = (int) (centerX + innerRadius * Math.cos(angle));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>yPoints[2 * i + 1] = (int) (centerY + innerRadius * Math.sin(angle));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>g.fillPolygon(xPoints, yPoints, 10);</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr><b>public</b> <b>static</b> <b>void</b> main(String[] args)</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>{</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>JFrame frame = <b>new</b> JFrame(<font color=red>"Accurate&nbsp;Yellow&nbsp;Five-Pointer&nbsp;Star"</font>);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>AccurateStarDrawing canvas = <b>new</b> AccurateStarDrawing();</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>canvas.setPreferredSize(new Dimension(200, 200));</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr></nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>frame.add(canvas);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>frame.pack();</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>frame.setVisible(true);</nobr><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<nobr>frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</nobr><br>
+&nbsp;&nbsp;&nbsp;<nobr>}</nobr><br>
+<nobr>}</nobr><br>
+</p></td></tr></table>
